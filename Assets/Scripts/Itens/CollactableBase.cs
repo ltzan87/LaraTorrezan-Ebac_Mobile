@@ -42,7 +42,12 @@ public class CollactableBase : MonoBehaviour
     }
 
     protected virtual void OnCollect() {
-        if (particleSystemCoin != null) particleSystemCoin.Play();
+        if (particleSystemCoin != null) 
+        {
+            particleSystemCoin.transform.SetParent(null);
+            particleSystemCoin.Play();
+        }
+
         if (audioSource != null) audioSource.Play();
     }
 }
