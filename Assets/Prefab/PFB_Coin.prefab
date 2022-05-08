@@ -67,6 +67,7 @@ MonoBehaviour:
   colliderCoin: {fileID: 8339085253847944592}
   collect: 0
   lerp: 5
+  minDistance: 0.9
 --- !u!1 &8339085254212343236
 GameObject:
   m_ObjectHideFlags: 0
