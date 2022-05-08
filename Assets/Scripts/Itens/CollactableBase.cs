@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CollactableBase : MonoBehaviour
-{  
+{
     public string compareTag = "Player";
 
     public ParticleSystem particleSystemCoin;
@@ -15,34 +15,45 @@ public class CollactableBase : MonoBehaviour
     [Header("Sounds")]
     public AudioSource audioSource;
 
-    private void Awake() {
+    private void Awake()
+    {
         //if (particleSystem != null) particleSystem.transform.SetParent(null);
         //Init();
     }
 
-    private void OnTriggerEnter(Collider collision) {
-        if(collision.transform.CompareTag(compareTag))
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.transform.CompareTag(compareTag))
         {
             Collect();
         }
     }
 
-    protected virtual void Init() {
+    protected virtual void Init()
+    {
         _collider = GetComponent<Collider2D>();
     }
 
-    protected virtual void Collect() {
-        if(graphicItem != null) graphicItem.SetActive(false);
+    protected virtual void HideItens()
+    {
+        if (graphicItem != null) graphicItem.SetActive(false);
         Invoke(nameof(HideObject), timeToHide);
-        OnCollect();       
     }
 
-    private void HideObject() {
+    protected virtual void Collect()
+    {
+        HideItens();
+        OnCollect();
+    }
+
+    private void HideObject()
+    {
         gameObject.SetActive(false);
     }
 
-    protected virtual void OnCollect() {
-        if (particleSystemCoin != null) 
+    protected virtual void OnCollect()
+    {
+        if (particleSystemCoin != null)
         {
             particleSystemCoin.transform.SetParent(null);
             particleSystemCoin.Play();
