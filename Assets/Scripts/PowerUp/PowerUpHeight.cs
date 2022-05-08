@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpHeight : MonoBehaviour
+public class PowerUpHeight : PowerUpBase
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Power Up Heighr")]
+    public float amountHeight = 2f;
 
-    // Update is called once per frame
-    void Update()
+    protected override void StartPowerUp()
     {
-        
+        base.StartPowerUp();
+        PlayerController.Instance.ChangeHeight(amountHeight, duration);
     }
 }
