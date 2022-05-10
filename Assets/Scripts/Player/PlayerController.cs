@@ -16,13 +16,16 @@ public class PlayerController : Singleton<PlayerController>
     public string tagCheckEndLine = "Finish";
     public GameObject endScene;
 
-    public bool Invencible = true;
+    public bool invencible = true;
 
     [Header("Text")]
     public TextMeshPro uiTextPowerUp;
 
-    [Header("Coin Collector")]
+    [Header("Coin Setup")]
     public GameObject coinCollector;
+
+    [Header("Animation")]
+    public AnimatorManager animatorManager;
 
     private Vector3 _pos;
     private bool _canRun;
@@ -50,27 +53,37 @@ public class PlayerController : Singleton<PlayerController>
     private void OnCollisionEnter(Collision collision) {
         if(collision.transform.tag == tagCheckEnemy)
         {
-            EndGame();
+            MoveBack(collision.transform);
+            if(!invencible) EndGame(AnimatorManager.AnimationType.DEATH);
         }
     }
 
     private void OnTriggerEnter(Collider other) {
         if(other.transform.tag == tagCheckEndLine)
         {
-            EndGame();
+            if(!invencible) EndGame();
         }
     }
 
-    public void EndGame()
+        
+    public void EndGame(AnimatorManager.AnimationType animationType = AnimatorManager.AnimationType.INDLE)
     {
         _canRun = false;
 
         endScene.SetActive(true);
+        
+        animatorManager.Play(animationType);
+    }
+
+    private void MoveBack(Transform t)
+    {
+        transform.DOMoveZ(1f, .3f).SetRelative();
     }
 
     public void StartToRun()
     {
         _canRun = true;
+        animatorManager.Play(AnimatorManager.AnimationType.RUN);
     }
 
     #region PU
@@ -86,7 +99,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public void SetInvencible(bool b = true)
     {
-        Invencible = b;
+        invencible = b;
     }
 
     public void ResetSpeed()
