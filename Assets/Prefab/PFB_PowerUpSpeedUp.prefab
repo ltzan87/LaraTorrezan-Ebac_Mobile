@@ -114,4 +114,4 @@ MonoBehaviour:
   graphicItem: {fileID: 4984773307302773895}
   audioSource: {fileID: 0}
   duration: 2
-  amountSpeedUp: 0
+  amountSpeedUp: 55
