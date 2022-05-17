@@ -3709,6 +3709,16 @@ MonoBehaviour:
   levels:
   - {fileID: 3967219728292580209, guid: 67abdf785e4c32c40b2576127962d2f4, type: 3}
   - {fileID: 2654870375599626674, guid: fcee63e9a436edc41a054d8261a70cf3, type: 3}
+  levelPiecesStart:
+  - {fileID: 3859231909197224427, guid: 6299eca3816b65d4f9542ebca13c5c56, type: 3}
+  levelPieces:
+  - {fileID: 3859231909197224427, guid: e9e5bf0d7b4f1694084f16aa7c211a6b, type: 3}
+  - {fileID: 8885443948221202109, guid: fa83dc5fd0ed9b540a953d26da3c8a3e, type: 3}
+  levelPiecesEnd:
+  - {fileID: 3859231909197224427, guid: 81661950f076c6641bd951bd30325484, type: 3}
+  piecesNumberStart: 3
+  piecesNumber: 5
+  piecesNumberEnd: 1
   _index: 1
 --- !u!1001 &2136470143
 PrefabInstance:
