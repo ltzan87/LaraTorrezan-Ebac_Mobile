@@ -751,9 +751,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   artSetups:
   - artType: 0
-    ga: {fileID: 1960845395405639749, guid: 02fa3732b59818f42b9f278d30c64751, type: 3}
+    gameObject: {fileID: 1960845395405639749, guid: 02fa3732b59818f42b9f278d30c64751, type: 3}
   - artType: 1
-    ga: {fileID: 8603344369723634551, guid: 0d7de882f30b2e44cb05fa51676802f2, type: 3}
+    gameObject: {fileID: 8603344369723634551, guid: 0d7de882f30b2e44cb05fa51676802f2, type: 3}
+  - artType: 2
+    gameObject: {fileID: 4991780551880365710, guid: 069258df4a3a35b4b86e34a7f7e8d0d9, type: 3}
 --- !u!1 &411870727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3789,16 +3791,11 @@ MonoBehaviour:
   levels:
   - {fileID: 3967219728292580209, guid: 67abdf785e4c32c40b2576127962d2f4, type: 3}
   - {fileID: 2654870375599626674, guid: fcee63e9a436edc41a054d8261a70cf3, type: 3}
-  levelPiecesStart:
-  - {fileID: 3859231909197224427, guid: 6299eca3816b65d4f9542ebca13c5c56, type: 3}
-  levelPieces:
-  - {fileID: 3859231909197224427, guid: e9e5bf0d7b4f1694084f16aa7c211a6b, type: 3}
-  - {fileID: 8885443948221202109, guid: fa83dc5fd0ed9b540a953d26da3c8a3e, type: 3}
-  levelPiecesEnd:
-  - {fileID: 3859231909197224427, guid: 81661950f076c6641bd951bd30325484, type: 3}
-  piecesNumberStart: 3
-  piecesNumber: 5
-  piecesNumberEnd: 1
+  - {fileID: 2654870375599626674, guid: d60f25433dde7e94bbe0573c4e22d5a0, type: 3}
+  levelPieceBasedSetups:
+  - {fileID: 11400000, guid: 6314cf00f2bfd69459fba7b7142e8e02, type: 2}
+  - {fileID: 11400000, guid: 824fee8b9f61d904aaff52e3f6bd9390, type: 2}
+  timeBetweenPieces: 0.3
   _index: 1
 --- !u!1001 &2136470143
 PrefabInstance:
@@ -4291,7 +4288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8134088690002550162, guid: fa83dc5fd0ed9b540a953d26da3c8a3e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.45
+      value: 19.83
       objectReference: {fileID: 0}
     - target: {fileID: 8134088690002550162, guid: fa83dc5fd0ed9b540a953d26da3c8a3e, type: 3}
       propertyPath: m_LocalRotation.w
