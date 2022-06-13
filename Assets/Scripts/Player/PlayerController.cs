@@ -62,7 +62,7 @@ public class PlayerController : Singleton<PlayerController>
     private void OnTriggerEnter(Collider other) {
         if(other.transform.tag == tagCheckEndLine)
         {
-            if(!invencible) EndGame();
+            if(!invencible || invencible) EndGame();
         }
     }
 
