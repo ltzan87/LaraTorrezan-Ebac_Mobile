@@ -3821,6 +3821,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6314cf00f2bfd69459fba7b7142e8e02, type: 2}
   - {fileID: 11400000, guid: 824fee8b9f61d904aaff52e3f6bd9390, type: 2}
   timeBetweenPieces: 0.3
+  scaleDuration: 0.2
+  scaleTimeBetweenPieces: 0.08
+  ease: 27
   _index: 1
 --- !u!1001 &2136470143
 PrefabInstance:
