@@ -18,6 +18,7 @@ public class CollactableCoin : CollactableBase
         base.OnCollect();
         colliderCoin.enabled = false;
         collect = true;
+        PlayerController.Instance.Bounce();
     }
 
     protected override void Collect()
