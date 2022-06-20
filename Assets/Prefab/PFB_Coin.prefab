@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   compareTag: CoinCollector
-  particleSystemCoin: {fileID: 0}
+  particleSystemCoin: {fileID: 7667422646360488493, guid: ca3464814dddf8845930e58d25a2fe02, type: 3}
   timeToHide: 3
   graphicItem: {fileID: 8339085254212343236}
   audioSource: {fileID: 0}

@@ -16,6 +16,8 @@ public class PlayerController : Singleton<PlayerController>
     public string tagCheckEndLine = "Finish";
     public GameObject endScene;
 
+    public Vector2 limitVector = new Vector2(-4, 4);
+
     public bool invencible = true;
 
     [Header("Text")]
@@ -26,6 +28,9 @@ public class PlayerController : Singleton<PlayerController>
 
     [Header("Animation")]
     public AnimatorManager animatorManager;
+
+    [Header("VFX")]
+    public ParticleSystem vfxDeath;
 
     [SerializeField] private BounceHelper _bounceHelper;
     private Vector3 _pos;
@@ -47,6 +52,9 @@ public class PlayerController : Singleton<PlayerController>
         _pos = target.position;
         _pos.y = transform.position.y;
         _pos.z = transform.position.z;
+
+        if (_pos.x < limitVector.x) _pos.x = limitVector.x;
+        else if (_pos.x > limitVector.x) _pos.x = limitVector.x;
 
         transform.position = Vector3.Lerp(transform.position, _pos, lerpSpeed * Time.deltaTime);
         transform.Translate(transform.forward * speed * Time.deltaTime);
@@ -80,6 +88,8 @@ public class PlayerController : Singleton<PlayerController>
         endScene.SetActive(true);
         
         animatorManager.Play(animationType);
+
+        if(vfxDeath != null) vfxDeath.Play();
     }
 
     private void MoveBack(Transform t)
