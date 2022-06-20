@@ -3168,7 +3168,7 @@ MonoBehaviour:
   tagCheckEnemy: Enemy
   tagCheckEndLine: Finish
   endScene: {fileID: 1524799569}
-  limitVector: {x: -4, y: 5}
+  limitVector: {x: -4, y: 4}
   invencible: 1
   uiTextPowerUp: {fileID: 486772404}
   coinCollector: {fileID: 392749661}
